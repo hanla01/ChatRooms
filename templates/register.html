@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <html lang="ko">
+        
+        <head>
+            <title>회원 가입 페이지</title>
+            <meta charset="utf-8">
+        </head>
+        
+        
+        <body>
+            <div id="topbar" style="width:100%;height:50px;background-color:gold;">
+                <a href="/main/"><FONT size="5" face="consolas" color="#555555">메인 페이지로</FONT></a>
+            </div>
+            
+            <div id="mainframe" style="margin-top:70px;width:100%;height:100%;">
+                <p align="center">
+                <img src="{% static "image/login.png" %}">
+                    <form method="post" action="/register_check/">
+                        {% csrf_token %}
+                        <p align="center">
+                        <input type="text" style="height:25px;" id="username" name="username" size="39"
+                        maxlength="25" value="" placeholder="nickname" />
+                        </p>
+                        <p align="center">
+                        <input type="password" style="height:25px;" id="password" name="password" size="39"
+                        maxlength="25" value="" placeholder="password" />
+                        </p>
+                        <p align="center">
+                        <input type="image" src="{% static "image/register.png" %}"/>
+                        </p>
+                    </form>
+                    </p>
+                    </div>
+            
+        </body>
+        
+    </html>
