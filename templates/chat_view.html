@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <html lang="ko">
+        
+        <head>
+            <title>Play Chatting</title>
+            <meta charset="utf-8">
+        </head>
+        
+        
+        <body>
+            <div id="topbar" style="width:100%;height:50px;background-color:gold;">
+                <FONT size="5" face="consolas" color="#555555">{{ username }}</FONT>
+            </div>
+            <br><br>
+            <FONT size="3" face="consolas" color="green">채팅방을 선택하세요 </FONT>
+            {% for Rooms in ChatRooms %}
+            <p align="center">
+            <a href="/rooms/{{ Rooms.id }}">
+            <FONT size="10" face="consolas" color="red">
+                {{ Rooms.Roomname }}
+            </FONT>
+            </a>
+            </p>
+            {% endfor %}
+            
+        </body>
+        
+    </html>
+    
+    
